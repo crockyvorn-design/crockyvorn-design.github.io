@@ -15,8 +15,9 @@ p {
     font-size: 2vw;
 }
 
-
-
+.video_translation{
+    margin-top: -100px;
+}
 
 body {
     background: radial-gradient(ellipse at center, #627a83 0%, #3b6b7c 65%, #145a74 100%);
@@ -52,6 +53,14 @@ body {
 
 .left {
     margin-left: -650px;
+    margin-top: -150px;
+}
+
+.right {
+    margin-left: 900px;
+    margin-top: -150px;
+    width: 40%;
+    position: absolute;
 }
 
 
@@ -101,6 +110,12 @@ body {
 .subtitle {
     margin-top: 0;
     animation: rise 1s ease-out 0.7s both;
+}
+
+.left_subtitle {
+    margin-top: 0;
+    animation: rise 1s ease-out 0.7s both;
+    margin-left: -500px;
 }
 
 @keyframes rise {
