@@ -171,6 +171,19 @@ nextButton.addEventListener("click", () => {
     }, 600);
 });
 
+const container = document.querySelector(".comparison");
+const before = document.getElementById("before");
+
+container.addEventListener("mousemove", (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const percentage = (x / rect.width) * 100;
+
+    console.log(percentage);
+
+    before.style.clipPath = 'inset(0 ${100 - percentage}% 0 0)';
+});
+
 window.addEventListener("resize", resize);
 
 resize();
