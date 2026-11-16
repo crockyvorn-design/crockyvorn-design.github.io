@@ -171,17 +171,16 @@ nextButton.addEventListener("click", () => {
     }, 600);
 });
 
-const container = document.querySelector(".comparison");
-const before = document.getElementById("before");
+document.querySelectorAll(".comparison").forEach(container => {
+    const before = container.querySelector("#before");
 
-container.addEventListener("mousemove", (e) => {
-    const rect = container.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const percentage = (x / rect.width) * 100;
+    container.addEventListener("mousemove", (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percentage = Math.max(0, Math.min(100, x / rect.width * 100));
 
-    console.log(percentage);
-
-    before.style.clipPath = 'inset(0 ${100 - percentage}% 0 0)';
+        before.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+    });
 });
 
 window.addEventListener("resize", resize);
