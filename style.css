@@ -17,6 +17,9 @@ p {
 
 .video_translation{
     margin-top: -6.9444vw;
+    width: 45.8333vw;
+    margin: 0 auto;
+    height: calc(45.8333vw / (16/9));
 }
 
 body {
